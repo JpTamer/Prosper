@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: prosper-api
+    runtime: node
+    env: node
+    region: oregon
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && node index.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PORT
+        value: 10000
